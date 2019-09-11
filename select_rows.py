@@ -3,8 +3,8 @@ from ip_address import Connection
 
 # this is a select statement in python
 connection = Connection()
-output = connection.session.execute("SELECT * FROM killrvideo.advocates WHERE region = %s AND city = %s AND last_name = %s AND first_name = %s",
-('North Carolina', 'Charlotte', 'Veale', 'Cristina'))
+output = connection.session.execute("SELECT * FROM killrvideo.user_credentials WHERE email = %s",
+['cv@datastax.com'])
 for row in output:
     print(row)
 connection.close()

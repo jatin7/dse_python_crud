@@ -4,8 +4,8 @@ from ip_address import Connection
 # this is a update statement in python
 connection = Connection()
 output = connection.session.execute(
-    "UPDATE killrvideo.advocates SET super_power = %s WHERE region = %s AND city = %s AND last_name = %s AND first_name = %s",
-    ('wormhole time travel', 'North Carolina', 'Charlotte', 'Veale', 'Cristina')
+    "UPDATE killrvideo.user_credentials SET password = %s WHERE email = %s",
+    ['Cr1st1n@sN3wP@ssW0rd', 'cv@datastax.com']
 )
 print(output)
 connection.close()
