@@ -3,9 +3,14 @@ from dse.cluster import Cluster
 
 class Connection:
     def __init__(self):
-        self.ip_address='127.0.0.1'
+        self.secure_connect_bundle='secure-connect-NAME.zip'
         self.path_to_creds=''
-        self.cluster = Cluster([self.ip_address])
+        self.cluster = Cluster(
+            cloud={
+                'secure_connect_bundle': self.secure_connect_bundle
+            },
+            auth_provider=PlainTextAuthProvider('USERNAME', 'PASSWORD')
+        )
         self.session = self.cluster.connect()
     def close(self):
         self.cluster.shutdown()
