@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from ip_address import Connection
+from db_connection import Connection
 import uuid
 
 # this is a insert statement in python
