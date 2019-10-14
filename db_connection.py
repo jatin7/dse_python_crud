@@ -1,5 +1,6 @@
 #!/usr/bin/env python3      
 from dse.cluster import Cluster
+from dse.auth import PlainTextAuthProvider
 
 class Connection:
     def __init__(self):
